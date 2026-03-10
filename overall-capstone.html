@@ -16,18 +16,68 @@
     </section>
 
     <section class="section-shell">
-      <h2>Theme 1</h2>
-      <div class="placeholder">WIP</div>
+      <h2>Pursuing Something Personal</h2>
+      <div class="section-content">
+        <p>
+          NetLearner's origin stems from an experience I had months prior to starting work on my capstone project. As someone interested in pursuing a career in networking, I've been repeatedly told by both professors and veteran IT professionals about the value of obtaining industry-recognized certifications to validate technical skills and open up new opportunities. In particular, the CCNA is hailed as the “gold standard” certificate for foundational networking knowledge. 
+        </p>
+        <p>
+          So, I decided to start spending time studying the material and preparing for the exam. What I didn’t realize at the time was just how comprehensive the exam was, and how much of an undertaking this would be. According to Cisco's estimations, I learned that it typically takes about 6 months of independent study to properly prepare for the exam. I had taken networking courses at UWB up to that point, and was familiar with many of the topics the exam covered, but there was so much more on the exam beyond the scope of those classes. Although by no means easy, learning the content itself was not the difficult part for me. The greatest challenge was staying motivated and consistent with my studies as I balanced coursework and other responsibilities, a sentiment I later found was shared by others in similar positions.
+        </p>
+        <p>
+          In search of material to help me with my studies, I scoured the internet for resources. While there’s no shortage of traditional resources out there like textbooks and video courses, it's not exactly what I was looking for. To supplement hours of engaging with this sort of material, I wanted to find a tool that could make the process a bit more enjoyable. Although imperfect, plenty of these apps already fill that niche for spaces like language-learning, programming, and general academics. What surprised me was that nothing of the sort existed for networking.
+        </p>
+        <p>
+          That gap became the foundation for NetLearner: an opportunity to build something that would genuinely answer a problem personal to me while also pushing myself technically.
+        </p>
+      </div>
     </section>
 
     <section class="section-shell">
-      <h2>Theme 2</h2>
-      <div class="placeholder">WIP</div>
+      <h2>Validating My Idea</h2>
+      <div class="section-content">
+        <p>
+          As eager as I was to start building, I understood that responsible software engineering requires grounding design decisions in evidence and stakeholder needs, a lesson reinforced throughout my coursework. A large portion of my effort during the first quarter was focused on this. 
+        </p>
+        <p>
+          I started with a literature review on gamification and microlearning, expecting to find empirically supported recommendations on how to effectively implement these learning approaches in my project. What I found instead was a field still in its infancy: researchers broadly agreed that gamification can improve engagement, but there's almost no consensus on which specific mechanics are most effective or under what conditions, and I found out that effectiveness of any given mechanic appeared to depend heavily on the audience and context it was designed for. That ambiguity was initially frustrating, but it also meant there was genuine open space to explore what worked for my project.
+        </p> 
+        <p>
+          That's what led me to gather my own data in two parts. First, I conducted a competitive analysis of existing gamified learning apps across different domains. Mapping out their strengths and shortcomings gave me a clearer idea of what NetLearner needed to do and what it needed to avoid. I then conducted a stakeholder survey, targeting mainly students with firsthand experience taking networking classes. I wanted to get a better understanding of their study habits, their experience with networking, their opinions of existing tools, and which gamification and edutech features they resonated with the most. The results pushed back on many of the assumptions I had going into the project. For example, badges and achievements, a staple of many of the apps I looked at, rated surprisingly low among respondents with an average score of 2.95/5 while other, more subtly crucial features like performance feedback averaged 4.32/5. Alongside my analysis of existing apps in the space, this survey helped me understand stakeholders' needs and directly shaped how I prioritized features going forward. Both the competitive analysis and survey culminated in formal written reports, a practice I'd come to learn was more valuable than I initially thought.
+        </p>
+        <p>
+          When my instructor reviewed my research findings, he pushed me to go deeper in my analysis. That conversation opened up into something broader about the importance of treating research as a formal deliverable rather than merely preparation for design and development. Prior to that conversation with my instructor, my approach to research across most of my software projects had been informal: jotting down notes, bookmarking resources, revisiting them as needed. I internalized the idea that documentation was something better kept to a minimum if it wasn't mandatory, especially in solo projects. That mindset served me well enough in shorter projects, but for something of this scope, it wasn't sufficient. My instructor emphasized producing structured documents during my research, even when I might be the only one referring back to them. I already knew how to produce these documents from my Technical Writing and Analysis & Design coursework, but I hadn't been actively applying them to the fullest extent I could have. Doing so helped me better synthesize what I was learning and made my design decisions traceable in a way they wouldn't have been otherwise. After collecting survey responses, I would take the time to create a data analysis report and make visualizations to help me interpret the results. Following that, I created a SRS document, compiling all of the functional and nonfunctional requirements into one place. This documentation I completed during the early stages of the project continued to inform my decisions throughout the entirety of development. Looking back, I'm grateful to have this pointed out so early since it made later phases significantly easier to navigate and taught me to reassess the habits I had normalized from previous projects.
+        </p>
+      </div>
     </section>
 
     <section class="section-shell">
-      <h2>Theme 3</h2>
-      <div class="placeholder">WIP</div>
+      <h2>Navigating the Tech</h2>
+      <div class="section-content">
+        <p>
+          Having established a clear understanding of what I wanted to build, the next challenge was acquiring the technical skillset to realize it. Most of my prior coursework had been in C++, and while I had some experience with React and TypeScript through a few personal projects and taking web programming, I was still fairly new to it. React Native was entirely foreign to me, so NetLearner was my foray into mobile development. I started with bare React Native, but ran into configuration issues that were eating up more time than I wanted to spend on setup. After further research, I found that Expo was the modern industry standard and fit my use case. Switching to Expo resolved many of the problems I initially had and it simplified the development environment considerably. It was an early reminder that knowing when to adopt the right tool matters as much as knowing how to use it. From there, most of the learning curve was getting comfortable with Expo's specific abstractions like Expo Router's file-based navigation, or Expo Go and its peculiarities, but it clicked fairly quickly for the most part. The part that demanded the most patience was styling. React Native's styling system borrows from CSS but behaves very differently, which was challenging to get used to. As someone who'd fairly recently learned to use styled components in React, it took a while to familiarize myself with React Native's odd syntax. In hindsight, using a CSS framework like NativeWind probably would have sped up the process, but I think there's still value in having learned to work with React Native's styling system and having more control over the final result. Overall, getting React Native to feel natural took a combination of reading documentation, watching tutorials, and a lot of trial and error.
+        </p>
+        <p>
+          On the backend, my prior coursework helped significantly. Web programming gave me a working understanding of full stack architecture that translated well when I was integrating NetLearner's frontend and backend, and my coursework in database systems made working with a relational database feel familiar at a fundamental level even if Supabase was fairly new to me. Instead of developing a separate API layer, I interacted with the database directly through Supabase's JS client. The absence of a traditional backend felt disorienting at first, coming from projects where client, server, and database are clearly separated. However, working with Supabase's RLS policies effectively replaced that layer by enforcing data access rules at the database level. For server side logic like calculating points when a user completes a lesson or processing certain gamification updates, I used Edge Functions. This architecture isn't the most elegant or scalable approach, especially if I want to change database or auth provider later on, but it simplified a lot of the backend development and was sufficient for my project's requirements.
+        </p>
+        <p>
+          With that, not every decision I made during this phase was well-prioritized. Early on in development, I spent a disproportionate amount of time perfecting authentication flows with Supabase (password resets, email verification, social login). While these features are necessary for when I eventually publish the app, they had no bearing on the main goals of my project. The cost of that became clear later in the second quarter when I found myself having to rush features that were actually crucial to my goals, like the CLI labs and some of the gamification features. The time invested early in other features like authentication could not be recovered when these higher priority features demanded attention. Experiencing this firsthand helped me gain a new respect for project managers and taught me the consequences of poor task prioritization.
+        </p>
+      </div>
+    </section>
+        <section class="section-shell">
+      <h2>Conclusion and Future of NetLearner</h2>
+      <div class="section-content">
+        <p>
+          Over the course of the past few months, NetLearner evolved from an idea rooted in personal frustration with the process of studying for networking certifications into a full-stack mobile app informed by research. I'm proud of the core experience the app provides, and of the technical and professional growth I went through as a result of working on it.
+        </p>
+        <p>
+          I intend to keep working on NetLearner after graduation. My immediate priorities are mostly focused on further personalizing the user learning experience by implementing adaptive question difficulty, adding a wider variety of gamification mechanics, improving accessibility features, and expanding the available learning content. Publishing to the App Store or Play Store also remains a short-term goal. After doing so, I would integrate analytics tooling to more accurately evalute which parts of the app improve learner engagement and knowledge retention.
+        </p>
+        <p>
+          Ultimately, what makes this project especially meaningful to me is that it still feels unfinished. I did not build NetLearner with the intention of setting it aside once the quarter ended. I built it around a problem I genuinely care about, and that continued investment is probably the clearest sign that the project succeeded. Even beyond the capstone, I can see NetLearner remaining a space for continued learning, iteration, and growth. I'm glad to have undertaken this project, even with the setbacks and moments of uncertainty, because it challenged me in ways that made me a more thoughtful engineer going forward.
+        </p>
+      </div>
     </section>
   </main>
 </body>

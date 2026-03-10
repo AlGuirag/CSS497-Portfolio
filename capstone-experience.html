@@ -16,18 +16,91 @@
     </section>
 
     <section class="section-shell">
-      <h2>Heading 1</h2>
-      <div class="placeholder">WIP</div>
+      <h2>Database</h2>
+      <div class="section-content">
+        <p>
+          This showcases my final database schema for my project. The core educational content mainy lives in the <code>modules</code>, <code>lessons</code>, and any associative tables like <code>module_lessons</code>. User progress is tracked in <code>user_module_progress</code> and <code>user_lesson_progress</code>, and any information related to gamification features like level, XP, and points is centralized in <code>user_stats</code> and <code>user_rewards</code>.
+        </p>
+        <figure class="content-figure">
+          <img src="images/supabaseimg1.JPG" alt="Final database schema" class="content-image">
+          <figcaption>Figure 1: Current database schema on Supabase</figcaption>
+        </figure>
+      </div>
     </section>
 
     <section class="section-shell">
-      <h2>Heading 2</h2>
-      <div class="placeholder">WIP</div>
+      <h2>Project Management</h2>
+      <div class="section-content">
+        <p>
+          For project management, I combined an iterative and Kanban framework. I used Trello as a Kanban board to maintain a prioritized backlog of tasks for my MVP, organized into four categories: research, design, development, and class deliverables. This kept my work structured and traceable throughout the project. As I received feedback from my expert, instructor, and stakeholders, and I iterated on my design, I would update the backlog to reflect those changes, keeping my priorities aligned with the current state of the project. I used VSCode for my IDE and Git for source control, which is integrated into VSCode.
+        </p>
+      </div>
     </section>
 
     <section class="section-shell">
-      <h2>Heading 3</h2>
-      <div class="placeholder">WIP</div>
+      <h2>Initial System Architecture</h2>
+      <div class="section-content">
+        <p>
+          This diagram represents my initial system architecture. The frontend was developed in Expo, a React Native framework that simplifies cross-platform mobile development by abstracting away much of the native configuration required by bare React Native. It also allowed me to leverage other tools that simplified development like Expo Go for rapid prototyping and Expo Router for navigation. I used TanStack Query to query and cache data from Supabase and coordinate updates to my frontend. The backend uses Supabase as a BaaS, which provides a range of features that streamlined setup. Notably, it offers a cloud hosted PostgreSQL database, authentication, file storage, RLS, and Database and Edge Functions for any server-side logic I needed in my app.
+        </p>
+        <figure class="content-figure">
+          <img src="images/initialarchitecture.JPG" alt="Initial system architecture" class="content-image">
+          <figcaption>Figure 2: Initial system architecture diagram</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <h2>User Interface</h2>
+      <div class="section-content ui-gallery">
+        <p>
+          These screenshots reflect the typical user journey through the application, covering authentication, the home screen, module navigation, lessons, quizzes, labs, and all gamification features.
+        </p>
+        <figure class="content-figure">
+          <img src="images/screen_signin.JPG" class="content-image">
+          <figcaption>Figure 3: Sign In</figcaption>
+        </figure>
+        <figure class="content-figure">
+          <img src="images/screen_modules.JPG" class="content-image">
+          <figcaption>Figure 4: Home Page and List of Modules</figcaption>
+        </figure>
+        <figure class="content-figure">
+          <img src="images/screen_lessonlist.JPG" class="content-image">
+          <figcaption>Figure 5: List of Activities in Module</figcaption>
+        </figure>
+        <figure class="content-figure">
+          <img src="images/screen_lessons.JPG" class="content-image">
+          <figcaption>Figure 6: Lessons</figcaption>
+        </figure>
+        <figure class="content-figure">
+          <img src="images/screen_multiplechoice.JPG" class="content-image">
+          <figcaption>Figure 7: Quiz Question 1</figcaption>
+        </figure>
+                <figure class="content-figure">
+          <img src="images/screen_multiplechoicewron.JPG" class="content-image">
+          <figcaption>Figure 8: Quiz Question 2</figcaption>
+        </figure>
+        <figure class="content-figure">
+          <img src="images/screen_truefalse.JPG" class="content-image">
+          <figcaption>Figure 9: Quiz Question 3</figcaption>
+        </figure>
+        <figure class="content-figure">
+          <img src="images/wip.JPG" class="content-image">
+          <figcaption>Figure 10: Lab</figcaption>
+        </figure>
+        <figure class="content-figure">
+          <img src="images/screen_reminders.JPG" class="content-image">
+          <figcaption>Figure 11: Setting Reminders</figcaption>
+        </figure>
+        <figure class="content-figure">
+          <img src="images/wip.JPG" class="content-image">
+          <figcaption>Figure 12: Rewards System</figcaption>
+        </figure>
+        <figure class="content-figure">
+          <img src="images/screen_notifications.JPG" class="content-image">
+          <figcaption>Figure 13: Push Notifications</figcaption>
+        </figure>
+      </div>
     </section>
   </main>
 </body>
