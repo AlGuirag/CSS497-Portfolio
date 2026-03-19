@@ -19,11 +19,11 @@
       <h2>Database</h2>
       <div class="section-content">
         <p>
-          This showcases my final database schema for my project. The core educational content mainly lives in the <code>modules</code>, <code>lessons</code>, and any associative tables like <code>module_lessons</code>. User progress is tracked in <code>user_module_progress</code> and <code>user_lesson_progress</code>, and any information related to gamification features like level, XP, and points is centralized in <code>user_stats</code> and <code>user_rewards</code>.
+          This showcases my final database schema for my project. The core educational content mainly lives in the <code>modules</code>, <code>lessons</code>, and any associative tables like <code>module_lessons</code>. User progress is tracked in <code>user_module_progress</code> and <code>user_lesson_progress</code>, and any information related to gamification features like level, XP, and streak_count is centralized in <code>user_stats</code>.
         </p>
         <figure class="content-figure">
-          <img src="images/supabaseimg1.JPG" alt="Final database schema" class="content-image">
           <figcaption>Figure 1: Current database schema on Supabase</figcaption>
+          <img src="images/supabaseimg1.JPG" alt="Final database schema" class="content-image">
         </figure>
       </div>
     </section>
@@ -32,20 +32,27 @@
       <h2>Project Management</h2>
       <div class="section-content">
         <p>
-          For project management, I combined an iterative and Kanban framework. I used Trello as a Kanban board to maintain a prioritized backlog of tasks for my MVP, organized into four categories: research, design, development, and class deliverables. This kept my work structured and traceable throughout the project. As I received feedback from my expert, instructor, and stakeholders, I iterated on my design and updated the backlog to reflect those changes. I used VSCode for my IDE and Git for source control, which is integrated into VSCode.
+          For project management, I combined an iterative and Kanban framework. Shown in Figure 2, I used Trello as a Kanban board to maintain a prioritized backlog of tasks for my MVP, organized into four categories: research, design, development, and class deliverables. This kept my work structured and traceable throughout the project. As I received feedback from my expert, instructor, and stakeholders, I iterated on my design and updated the backlog to reflect those changes. I used VSCode for my IDE and Git for source control, which is integrated into VSCode.
         </p>
       </div>
     </section>
 
     <section class="section-shell">
-      <h2>Initial System Architecture</h2>
+      <h2>System Architecture</h2>
       <div class="section-content">
         <p>
-          This diagram represents my initial system architecture. The frontend was developed in Expo, a React Native framework that simplifies cross-platform mobile development by abstracting away much of the native configuration required by bare React Native. It also allowed me to leverage other tools that simplified development like Expo Go for rapid prototyping and Expo Router for navigation. I used TanStack Query to query and cache data from Supabase and coordinate updates to my frontend. The backend uses Supabase as a BaaS, which provides a range of features that streamlined setup. Notably, it offers a cloud hosted PostgreSQL database, authentication, file storage, RLS, and Database and Edge Functions for any server-side logic I needed in my app.
+          Figure 3 represents my initial system architecture. The frontend was developed in Expo, a React Native framework that simplifies cross-platform mobile development by abstracting away much of the native configuration required by bare React Native. It also allowed me to leverage other tools that simplified development like Expo Go for rapid prototyping and Expo Router for navigation. The backend uses Supabase as a BaaS, which provides a range of features that simplify backend development. Notably, I used the cloud hosted PostgreSQL database, authentication, file storage, RLS, and Database and Edge Functions for any server-side logic I needed in my app.
         </p>
         <figure class="content-figure">
-          <img src="images/initialarchitecture.JPG" alt="Initial system architecture" class="content-image">
-          <figcaption>Figure 2: Initial system architecture diagram</figcaption>
+          <figcaption>Figure 2: Initial System Architecture</figcaption>
+          <img src="images/initialarchitecture.JPG" alt="Initial system architecture"class="content-image">
+        </figure>
+        <p>
+          As I got further into development, I started to explore and integrate some of the React libraries out there to streamline development. In particular, I used Zustand to manage global state, and TanStack Query to query and cache data from Supabase. For integrating animations, I also used Lottie. I explored using different UI frameworks, but wasn't satisfied with how they looked and wanted to have more control over the design, so I ended up building my own custom components and styles with StyleSheet.
+        </p>
+        <figure class="content-figure">
+          <figcaption>Figure 3: Final System Architecture</figcaption>
+          <img src="images/finalarchitecture.png" alt="Final system architecture" class="content-image">
         </figure>
       </div>
     </section>
@@ -54,52 +61,71 @@
       <h2>User Interface</h2>
       <div class="section-content ui-gallery">
         <p>
-          These screenshots reflect the typical user flow through the application, covering authentication, the home screen, module navigation, lessons, quizzes, labs, and all gamification features.
+          The following sections reflect the typical user flow through the application, covering authentication, the home screen, module navigation, lessons, quizzes, labs, and various gamification features.
+        </p>
+        <p>
+          When a user first opens the app, they are prompted to create an account or sign in with email/password or social login with Google.
+        </p>
+        <figure class="content-figure solo">
+          <figcaption>Sign In</figcaption>
+          <img src="images/screen_signin.JPG" class="content-image">
+        </figure>
+        <p>
+          Once signed in, users land on the home screen, which displays a list of modules to choose from. For the MVP, I decided to create one end-to-end module about subnetting for the sake of demonstrating the core educational features, but the app is designed to scale to accommodate a comprehensive library of educational content. Selecting a module navigates to a list of activities, which include lessons, quizzes, and labs.
         </p>
         <figure class="content-figure">
-          <img src="images/screen_signin.JPG" class="content-image">
-          <figcaption>Figure 3: Sign In</figcaption>
-        </figure>
-        <figure class="content-figure">
+          <figcaption>Home Page and List of Modules</figcaption>
           <img src="images/screen_modules.JPG" class="content-image">
-          <figcaption>Figure 4: Home Page and List of Modules</figcaption>
         </figure>
         <figure class="content-figure">
+          <figcaption>List of Activities in Module</figcaption>
           <img src="images/screen_lessonlist.JPG" class="content-image">
-          <figcaption>Figure 5: List of Activities in Module</figcaption>
         </figure>
-        <figure class="content-figure">
-          <img src="images/screen_lessons.JPG" class="content-image">
-          <figcaption>Figure 6: Lessons</figcaption>
+        <p>
+          Lessons are meant to be short briefers about a networking concept, covering the key concepts a user need to know before completing an interactive exercise. Quizzes test users' understanding of what they  learned and offer immediate feedback, which plays a critical role in helping them identify their knowledge gaps. As they complete lessons and quizzes, they accumulate XP (experience points) toward leveling up.
+        </p>
+        <div class="figure-row four-up">
+          <figure class="content-figure">
+            <figcaption>Lessons</figcaption>
+            <img src="images/screen_lessons.JPG" class="content-image">
+          </figure>
+          <figure class="content-figure">
+            <figcaption>Quiz Question 1</figcaption>
+            <img src="images/screen_multiplechoice.JPG" class="content-image">
+          </figure>
+          <figure class="content-figure">
+            <figcaption>Quiz Question 2</figcaption>
+            <img src="images/screen_multiplechoicewron.JPG" class="content-image">
+          </figure>
+          <figure class="content-figure">
+            <figcaption>Quiz Question 3</figcaption>
+            <img src="images/screen_truefalse.JPG" class="content-image">
+          </figure>
+        </div>
+        <p>
+          Labs simulate real networking scenarios like configuring subnet masks on a Cisco router CLI. The user walks through several steps by typing commands into the terminal. Internally, they're essentially implemented as short answer questions but the terminal aesthetic and a few small design choices like accepting command variations gives the users a feeling of immersion. Through this, they get to apply what they've learned in a more realistic context, which can help solidify their understanding and build confidence in their skills.
+        </p>
+        <figure class="content-figure solo">
+          <figcaption>Labs</figcaption>
+          <img src="images/screen_lab.JPG" class="content-image">
         </figure>
-        <figure class="content-figure">
-          <img src="images/screen_multiplechoice.JPG" class="content-image">
-          <figcaption>Figure 7: Quiz Question 1</figcaption>
-        </figure>
-                <figure class="content-figure">
-          <img src="images/screen_multiplechoicewron.JPG" class="content-image">
-          <figcaption>Figure 8: Quiz Question 2</figcaption>
-        </figure>
-        <figure class="content-figure">
-          <img src="images/screen_truefalse.JPG" class="content-image">
-          <figcaption>Figure 9: Quiz Question 3</figcaption>
-        </figure>
-        <figure class="content-figure">
-          <img src="images/wip.JPG" class="content-image">
-          <figcaption>Figure 10: Lab</figcaption>
-        </figure>
-        <figure class="content-figure">
-          <img src="images/screen_reminders.JPG" class="content-image">
-          <figcaption>Figure 11: Setting Reminders</figcaption>
-        </figure>
-        <figure class="content-figure">
-          <img src="images/wip.JPG" class="content-image">
-          <figcaption>Figure 12: Rewards System</figcaption>
-        </figure>
-        <figure class="content-figure">
-          <img src="images/screen_notifications.JPG" class="content-image">
-          <figcaption>Figure 13: Push Notifications</figcaption>
-        </figure>
+        <p>
+          Daily reminders and streaks encourage users to stay consistent with th eir studies. The idea is that making progress visible and rewarding makes it easier to build the kind of study habit that certification preparation actually demands.
+        </p>
+        <div class="figure-row three-up">
+          <figure class="content-figure">
+            <figcaption>Setting Reminders</figcaption>
+            <img src="images/screen_reminders.JPG" class="content-image">
+          </figure>
+          <figure class="content-figure">
+            <figcaption>Push Notifications</figcaption>
+            <img src="images/screen_notifications.JPG" class="content-image">
+          </figure>
+          <figure class="content-figure">
+            <figcaption>Streaks</figcaption>
+            <img src="images/screen_streaks.JPG" class="content-image">
+          </figure>
+        </div>
       </div>
     </section>
   </main>
